@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cydney Monroe — Writer, Game Designer, Illustrator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #0B1630;
+    color: #EEF0FA;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --navy: #1C2859;
+    --navy-deep: #0B1630;
+    --navy-mid: #0F1D40;
+    --peri: #A8B2E4;
+    --peri-dim: #6B76A8;
+    --lav: #D8DCEF;
+    --chart: #C2D448;
+    --max-w: 900px;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600; color: var(--peri); margin-bottom: 0.5rem;
+  }
+  .section-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.4rem, 3.5vw, 1.7rem); font-weight: 700;
+    color: #EEF0FA; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  }
+  .divider { height: 3px; background: var(--peri); opacity: 0.3; }
+
+  /* ══════ NAV ══════ */
+  nav {
+    background: var(--navy-deep);
+    border-bottom: 1px solid rgba(168,178,228,0.15);
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-badge {
+    width: 34px; height: 34px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0; background: var(--peri);
+  }
+  .logo-badge img { width: 100%; height: 100%; object-fit: cover; }
+  .logo-name {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px;
+    font-weight: 700; color: #EEF0FA; letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; align-items: center; gap: clamp(12px, 3vw, 24px); list-style: none; }
+  .nav-links a { font-size: 13px; text-decoration: none; color: var(--peri); transition: color 0.2s; }
+  .nav-links a:hover { color: #EEF0FA; }
+  .nav-links .cta {
+    background: var(--chart); color: var(--navy-deep) !important;
+    padding: 6px 16px; border-radius: 20px; font-weight: 700;
+  }
+  .nav-links .cta:hover { opacity: 0.88; }
+  @media (max-width: 480px) { .nav-links .hide-xs { display: none; } }
+
+  /* ══════ HERO ══════ */
+  #hero {
+    background: var(--navy-deep);
+    padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+    text-align: center;
+  }
+  #hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 700;
+    color: #EEF0FA; letter-spacing: -0.045em; line-height: 1.04;
+    margin-bottom: 2.25rem;
+  }
+  .hero-bio {
+    font-size: 1rem; color: var(--peri);
+    max-width: 440px; margin: 0 auto 2.25rem; line-height: 1.78;
+  }
+  .btn-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--chart); color: var(--navy-deep);
+    padding: 0.75rem 1.75rem; border-radius: 24px;
+    font-size: 0.9rem; font-weight: 700; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-outline {
+    border: 2px solid var(--peri); color: var(--peri);
+    padding: 0.7rem 1.7rem; border-radius: 24px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: #EEF0FA; color: #EEF0FA; }
+
+  /* ══════ ABOUT ══════ */
+  #about { background: var(--navy-mid); padding: clamp(2.5rem, 6vw, 4rem) 0; }
+  .about-inner {
+    display: flex; gap: clamp(1.25rem, 4vw, 2.5rem); align-items: flex-start;
+  }
+  .photo-wrap {
+    flex-shrink: 0;
+    width: clamp(96px, 18vw, 140px);
+    height: clamp(120px, 22vw, 175px);
+    border-radius: 12px; overflow: hidden;
+    border: 2px solid rgba(168,178,228,0.25);
+    background: var(--navy);
+  }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .about-text p { font-size: 0.9rem; color: var(--peri); line-height: 1.8; margin-bottom: 0.75rem; }
+  .about-text strong { color: #EEF0FA; font-weight: 700; }
+  .text-link {
+    display: inline-block; margin-top: 0.25rem;
+    font-size: 0.875rem; font-weight: 700; color: var(--chart);
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .text-link:hover { opacity: 0.85; }
+
+  /* ══════ PROJECTS ══════ */
+  #projects { background: var(--navy-deep); padding: clamp(2.5rem, 6vw, 4rem) 0; }
+
+  .shiya-card {
+    background: #F3F7DF; border: 1px solid #D8E3AC; border-radius: 14px;
+    overflow: hidden; display: flex; margin-bottom: 1.5rem;
+  }
+  .shiya-visual {
+    width: 158px; flex-shrink: 0; background: #E5EDC4;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 1.25rem 1rem;
+  }
+  .shiya-icon { width: 50px; height: 50px; border-radius: 13px; overflow: hidden; background: var(--navy); }
+  .shiya-icon img { width: 100%; height: 100%; object-fit: cover; }
+  .shiya-visual-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #333D10; }
+  .shiya-visual-sub { font-size: 10px; color: #6B7442; text-align: center; line-height: 1.4; }
+  .shiya-body { padding: 1.4rem 1.5rem; flex: 1; min-width: 0; }
+  .badge-row { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+  .badge {
+    font-size: 10px; padding: 3px 10px; border-radius: 20px; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .badge-chart { background: var(--navy); color: var(--chart); }
+  .badge-warm { background: #DCE6B8; color: #4A5220; }
+  .shiya-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #333D10; margin-bottom: 10px; }
+  .shiya-screenshot { width: 100%; max-width: 320px; border-radius: 10px; margin-bottom: 0.875rem; border: 1px solid #D8E3AC; }
+  .shiya-desc { font-size: 0.825rem; color: #6B7442; line-height: 1.65; margin-bottom: 0.875rem; }
+  .shiya-link { font-size: 0.825rem; font-weight: 700; color: #333D10; text-decoration: underline; text-underline-offset: 3px; }
+
+  .tg-banner { width: 100%; border-radius: 14px; margin-bottom: 0.875rem; }
+  .tg-header {
+    background: var(--navy); border: 1px solid rgba(168,178,228,0.2); border-radius: 14px;
+    padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 0.875rem; flex-wrap: wrap;
+  }
+  .tg-badge { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: var(--peri); }
+  .tg-badge img { width: 100%; height: 100%; object-fit: cover; }
+  .tg-info { flex: 1; min-width: 180px; }
+  .tg-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #D8DCEF; margin-bottom: 2px; }
+  .tg-sub { font-size: 0.75rem; color: var(--peri); }
+  .tg-link {
+    font-size: 0.8rem; font-weight: 700; color: var(--chart);
+    text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;
+  }
+  .tg-link:hover { opacity: 0.85; }
+
+  .games-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem; margin-bottom: 1.25rem;
+  }
+  .game-card {
+    background: var(--navy); border: 1px solid rgba(168,178,228,0.15);
+    border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+  }
+  .game-card:hover { border-color: rgba(168,178,228,0.4); }
+  .game-card-link, .game-card-toggle { text-decoration: none; cursor: pointer; display: block; }
+  .game-play-hint {
+    display: block; font-size: 0.68rem; font-weight: 700; color: var(--chart);
+    margin-top: 2px;
+  }
+
+  /* HausKeepr inline player */
+  .hk-panel { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .hk-panel.open { max-height: 900px; }
+  .hk-inner {
+    margin-top: 1rem; background: var(--navy-mid);
+    border: 1px solid rgba(168,178,228,0.2); border-radius: 14px;
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+  .hk-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.875rem; flex-wrap: wrap; }
+  .hk-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: #EEF0FA; }
+  .hk-sub { font-size: 0.78rem; color: var(--peri); margin-top: 2px; }
+  .hk-close {
+    background: transparent; border: 1.5px solid var(--peri-dim); color: var(--peri);
+    font-family: 'Nunito', sans-serif; font-size: 0.75rem; font-weight: 700;
+    padding: 0.4rem 0.9rem; border-radius: 20px; cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+  }
+  .hk-close:hover { border-color: var(--chart); color: var(--chart); }
+  .hk-frame {
+    width: 100%; height: 70vh; min-height: 420px; max-height: 720px;
+    border: 1px solid rgba(168,178,228,0.2); border-radius: 10px; background: #fff;
+  }
+  .game-thumb { height: clamp(90px, 18vw, 120px); overflow: hidden; }
+  .game-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .game-thumb.top-crop img { object-position: center 20%; }
+  .game-info { padding: 0.75rem 0.875rem; }
+  .game-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; font-weight: 700; color: #EEF0FA; margin-bottom: 3px; }
+  .game-sub { font-size: 0.72rem; color: var(--peri); }
+
+  .resume-card {
+    display: flex; align-items: center; gap: 1rem;
+    border: 2px dashed rgba(168,178,228,0.4); border-radius: 14px;
+    padding: 1rem 1.5rem; text-decoration: none; cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .resume-card:hover { background: rgba(168,178,228,0.07); border-color: rgba(168,178,228,0.7); }
+  .resume-icon {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--chart);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px;
+  }
+  .resume-info { flex: 1; min-width: 0; }
+  .resume-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700; color: #EEF0FA; margin-bottom: 3px; }
+  .resume-desc { font-size: 0.8rem; color: var(--peri); }
+  .resume-arrow {
+    font-size: 0.82rem; font-weight: 700; color: var(--chart);
+    text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;
+  }
+
+  /* ══════ CONTACT ══════ */
+  #contact {
+    background-color: var(--navy);
+    background-image: linear-gradient(rgba(28,40,89,0.88), rgba(28,40,89,0.88)), url('fremandi_pattern.jpg');
+    background-size: cover; background-position: center; background-repeat: repeat;
+    padding: clamp(3rem, 7vw, 4.5rem) 0; text-align: center;
+  }
+  #contact h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.6rem, 5vw, 2.1rem);
+    font-weight: 700; color: #EEF0FA; letter-spacing: -0.03em; margin-bottom: 0.75rem;
+  }
+  #contact p {
+    font-size: 0.9rem; color: var(--peri); max-width: 360px;
+    margin: 0 auto 2.25rem; line-height: 1.78;
+  }
+  .btn-chart {
+    display: inline-block; background: var(--chart); color: var(--navy-deep);
+    padding: 0.85rem 2rem; border-radius: 24px; font-size: 0.9rem; font-weight: 700;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .btn-chart:hover { opacity: 0.9; }
+
+  /* ══════ FOOTER ══════ */
+  footer {
+    background: #080E22;
+    padding: 1.25rem clamp(1.25rem, 4vw, 2.5rem);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.75rem;
+  }
+  .footer-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #D8DCEF; }
+  .footer-links { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.78rem; color: var(--peri); text-decoration: none; }
+  .footer-links a:hover { color: #EEF0FA; }
+  .footer-copy { font-size: 0.78rem; color: var(--peri); }
+
+
+  /* ══════ INLINE RÉSUMÉ PANEL ══════ */
+  .resume-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  .resume-panel.open { max-height: 6000px; }
+  .rp-inner {
+    margin-top: 1rem;
+    background: var(--navy-mid);
+    border: 1px solid rgba(168,178,228,0.2);
+    border-radius: 14px;
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+  .rp-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .rp-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; color: #EEF0FA; letter-spacing: -0.02em; }
+  .rp-role { font-size: 0.8rem; color: var(--chart); font-weight: 700; margin-top: 2px; }
+  .rp-print {
+    background: transparent; border: 1.5px solid var(--peri-dim); color: var(--peri);
+    font-family: 'Nunito', sans-serif; font-size: 0.75rem; font-weight: 700;
+    padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+  }
+  .rp-print:hover { border-color: var(--chart); color: var(--chart); }
+  .rp-summary { font-size: 0.85rem; color: var(--peri); line-height: 1.7; max-width: 640px; margin-bottom: 0.875rem; }
+  .rp-contact { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: var(--peri-dim); margin-bottom: 1.75rem; }
+  .rp-contact a { color: var(--peri); text-decoration: none; border-bottom: 1px solid var(--peri-dim); }
+  .rp-contact a:hover { color: var(--chart); border-color: var(--chart); }
+  .rp-section-label {
+    font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700; color: var(--peri-dim); margin: 1.5rem 0 0.75rem;
+  }
+  .rp-entry {
+    background: var(--navy-deep);
+    border: 1px solid rgba(168,178,228,0.14);
+    border-radius: 12px; margin-bottom: 0.6rem;
+    cursor: pointer; overflow: hidden;
+  }
+  .rp-entry:hover { border-color: rgba(168,178,228,0.35); }
+  .rp-entry-head {
+    padding: 0.9rem 1.1rem;
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;
+  }
+  .rp-entry-titles { flex: 1; min-width: 0; }
+  .rp-entry-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; font-weight: 700; color: #EEF0FA; }
+  .rp-entry-dates { font-size: 0.72rem; color: var(--peri-dim); margin: 2px 0 8px; }
+  .rp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .rp-tag {
+    font-size: 0.66rem; font-weight: 700;
+    padding: 2px 9px; border-radius: 20px;
+    background: rgba(194,212,72,0.13); color: var(--chart);
+  }
+  .rp-chevron { color: var(--chart); font-size: 0.9rem; transition: transform 0.25s; flex-shrink: 0; margin-top: 2px; }
+  .rp-entry.open .rp-chevron { transform: rotate(180deg); }
+  .rp-entry-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .rp-entry.open .rp-entry-body { max-height: 800px; }
+  .rp-entry-body ul { list-style: none; padding: 0 1.1rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .rp-entry-body li {
+    font-size: 0.8rem; color: var(--peri); line-height: 1.65;
+    padding-left: 1rem; position: relative;
+  }
+  .rp-entry-body li::before {
+    content: ''; position: absolute; left: 0; top: 0.55em;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--chart);
+  }
+  .rp-edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+  .rp-edu {
+    background: var(--navy-deep); border: 1px solid rgba(168,178,228,0.14);
+    border-radius: 12px; padding: 0.9rem 1.1rem;
+  }
+  .rp-edu-degree { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 700; color: #EEF0FA; }
+  .rp-edu-school { font-size: 0.72rem; color: var(--peri); margin-top: 3px; }
+  .rp-close {
+    display: block; margin: 1.5rem auto 0;
+    background: var(--chart); color: var(--navy-deep);
+    border: none; font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    padding: 0.7rem 1.6rem; border-radius: 24px; cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .rp-close:hover { opacity: 0.88; }
+
+  /* Print: show ONLY the hidden ATS resume block */
+  #atsResume { display: none; }
+  @media print {
+    body > *:not(#atsResume) { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    @page { margin: 0.55in; }
+    #atsResume {
+      display: block !important;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt; line-height: 1.3; color: #000;
+      max-width: 7.5in; margin: 0;
+    }
+    #atsResume h1 { font-size: 15pt; margin-bottom: 1pt; font-weight: bold; }
+    #atsResume .ats-contact { font-size: 9pt; margin-bottom: 6pt; }
+    #atsResume h2 {
+      font-size: 10.5pt; font-weight: bold; text-transform: uppercase;
+      margin: 8pt 0 3pt; border-bottom: 1px solid #000; padding-bottom: 1pt;
+    }
+    #atsResume h3 { font-size: 10pt; font-weight: bold; margin: 5pt 0 0; }
+    #atsResume .ats-dates { font-size: 9pt; font-style: italic; margin-bottom: 2pt; }
+    #atsResume ul { margin: 0 0 4pt 16pt; padding: 0; }
+    #atsResume li { margin-bottom: 1pt; }
+    #atsResume p { margin-bottom: 4pt; }
+  }
+
+  /* ══════ RESPONSIVE ══════ */
+  @media (max-width: 620px) {
+    .about-inner { gap: 1.25rem; }
+    .shiya-card { flex-direction: column; }
+    .shiya-visual { width: 100%; flex-direction: row; justify-content: flex-start; padding: 1rem 1.25rem; }
+    .games-grid { grid-template-columns: 1fr; }
+    .resume-card { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav>
+  <a class="logo" href="#hero">
+    <div class="logo-badge"><img src="Turtle_Goat_Logo.png" alt="Turtle Goat Games logo"></div>
+    <span class="logo-name">C Monroe</span>
+  </a>
+  <ul class="nav-links">
+    <li class="hide-xs"><a href="#about">About</a></li>
+    <li class="hide-xs"><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Résumé</a></li>
+    <li><a href="#contact" class="cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="container">
+    <p class="eyebrow">Writer · Game Designer · Illustrator</p>
+    <h1>Cydney Monroe</h1>
+    <div class="btn-row">
+      <a href="#projects" class="btn-primary">View my work</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ ABOUT ══════ -->
+<section id="about">
+  <div class="container about-inner">
+    <div class="photo-wrap">
+      <img src="cydney.avif" alt="Photo of Cydney Monroe">
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">About me</p>
+      <h2 class="section-heading" style="margin-bottom:1rem;">Hi, I'm Cydney.</h2>
+      <p>Science fiction writer, game designer, and illustrator who builds interactive stories that encourage curiosity, empathy, and reflection.</p>
+      <p>Co-founder of <strong>Turtle Goat Games</strong>. Creator of <strong>Shiya</strong>.</p>
+      <a href="#resume" class="text-link" onclick="openResume()">View résumé ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ PROJECTS ══════ -->
+<section id="projects">
+  <div class="container">
+    <p class="eyebrow">Projects</p>
+    <h2 class="section-heading">Things I've made</h2>
+
+    <!-- Shiya -->
+    <div class="shiya-card">
+      <div class="shiya-visual">
+        <div class="shiya-icon"><img src="shiya_icon.png" alt="Shiya logo"></div>
+        <span class="shiya-visual-name">Shiya</span>
+        <span class="shiya-visual-sub">Intention board PWA</span>
+      </div>
+      <div class="shiya-body">
+        <div class="badge-row">
+          <span class="badge badge-chart">Published App</span>
+          <span class="badge badge-warm">PWA</span>
+        </div>
+        <p class="shiya-title">Your intentions, made visible</p>
+        <img src="shiya_screenshot.png" alt="Shiya app screenshot" class="shiya-screenshot">
+        <p class="shiya-desc">A vision board builder for mobile and desktop wallpapers. Add images, affirmations, and tarot cards — then export or save to your home screen.</p>
+        <a href="https://shiyaapp.netlify.app" target="_blank" class="shiya-link">shiyaapp.netlify.app →</a>
+      </div>
+    </div>
+
+    <!-- Turtle Goat Games -->
+    <img src="Turtle_Goat_Banner.png" alt="Turtle Goat Games banner" class="tg-banner">
+    <div class="tg-header">
+      <div class="tg-badge"><img src="Turtle_Goat_Logo.png" alt="Turtle Goat Games logo"></div>
+      <div class="tg-info">
+        <p class="tg-name">Turtle Goat Games</p>
+        <p class="tg-sub">Indie game studio · Game design, level design &amp; 2D illustration</p>
+      </div>
+      <a href="https://444fern444.itch.io/" target="_blank" class="tg-link">Play our games! →</a>
+    </div>
+
+    <div class="games-grid">
+      <a class="game-card game-card-link" href="https://444fern444.itch.io/fremandi" target="_blank">
+        <div class="game-thumb"><img src="Cover.jpg" alt="Fremandi cover art"></div>
+        <div class="game-info">
+          <p class="game-title">Fremandi <span class="game-play-hint">Play on itch.io ↗</span></p>
+          <p class="game-sub">2.5D escape · Unity · Climate narrative</p>
+        </div>
+      </a>
+      <div class="game-card">
+        <div class="game-thumb top-crop"><img src="fmni.png" alt="Forget-Me-Not Inn cover art"></div>
+        <div class="game-info">
+          <p class="game-title">Forget-Me-Not Inn</p>
+          <p class="game-sub">Match-3 mystery · GameMaker · Story-driven</p>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb"><img src="KaizenDaido.png" alt="Kaizen Daido cover art"></div>
+        <div class="game-info">
+          <p class="game-title">Kaizen Daido</p>
+          <p class="game-sub">Cozy RPG · RPG Maker · Language learning</p>
+        </div>
+      </div>
+      <div class="game-card game-card-toggle" id="hauskeeprToggle" onclick="toggleHausKeepr()">
+        <div class="game-thumb top-crop"><img src="HausKeepr_Final_Flyer.png" alt="HausKeepr cover art"></div>
+        <div class="game-info">
+          <p class="game-title">HausKeepr <span class="game-play-hint" id="hauskeeprToggleLabel">Play now →</span></p>
+          <p class="game-sub">Branching thriller · Twine · AI ethics</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ INLINE HAUSKEEPR PLAYER (hidden until expanded) ══════ -->
+    <div id="hauskeeprPanel" class="hk-panel">
+      <div class="hk-inner">
+        <div class="hk-head">
+          <div>
+            <p class="hk-title">HausKeepr</p>
+            <p class="hk-sub">A branching narrative thriller · exploring AI ethics &amp; corporate responsibility</p>
+          </div>
+          <button class="hk-close" onclick="toggleHausKeepr()">Close ✕</button>
+        </div>
+        <iframe id="hauskeeprFrame" class="hk-frame" src="about:blank" title="HausKeepr interactive story" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="resume-card" id="resume" onclick="toggleResume()">
+      <div class="resume-icon">📄</div>
+      <div class="resume-info">
+        <p class="resume-title">Résumé</p>
+        <p class="resume-desc">Professional background — skills, experience &amp; education.</p>
+      </div>
+      <span class="resume-arrow" id="resumeToggleLabel">See my résumé →</span>
+    </div>
+
+    <!-- ══════ INLINE RÉSUMÉ (hidden until expanded) ══════ -->
+    <div id="resumePanel" class="resume-panel">
+      <div class="rp-inner">
+
+        <div class="rp-head">
+          <div>
+            <p class="rp-name">Cydney Monroe</p>
+            <p class="rp-role">Game Design · Narrative Design · Creative Consulting</p>
+          </div>
+          <button class="rp-print" onclick="window.print()">Print / Save PDF</button>
+        </div>
+
+        <p class="rp-summary">Creative Writing BFA graduate and current Game Design student focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
+
+        <div class="rp-contact">
+          <a href="mailto:cydneybergdorf@gmail.com">cydneybergdorf@gmail.com</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/cydneymonroe" target="_blank">LinkedIn</a>
+          <span>·</span>
+          <span>Richmond, VA</span>
+        </div>
+
+        <p class="rp-section-label">Experience</p>
+
+        <div class="rp-entry" onclick="toggleEntry(this)">
+          <div class="rp-entry-head">
+            <div class="rp-entry-titles">
+              <p class="rp-entry-title">Game Designer — Turtle Goat Games</p>
+              <p class="rp-entry-dates">May 2026 – Present · Richmond, VA</p>
+              <div class="rp-tags">
+                <span class="rp-tag">Unity</span><span class="rp-tag">RPG Maker MZ</span><span class="rp-tag">GameMaker</span><span class="rp-tag">GDDs</span><span class="rp-tag">Narrative Design</span><span class="rp-tag">Worldbuilding</span><span class="rp-tag">2D Art &amp; Branding</span>
+              </div>
+            </div>
+            <span class="rp-chevron">▾</span>
+          </div>
+          <div class="rp-entry-body"><ul>
+            <li>Built interactive prototypes in Unity, RPG Maker MZ, and GameMaker to test gameplay mechanics, player progression, and user experience.</li>
+            <li>Created comprehensive Game Design Documents, production roadmaps, and design specifications for multiple original game concepts.</li>
+            <li>Designed and documented Kaizen Daidō, a language-learning RPG combining interactive storytelling, exploration, and educational gameplay systems.</li>
+            <li>Developed complete narrative design, dialogue structure, worldbuilding, and gameplay documentation for Forget-Me-Not Inn, a story-driven mystery match-3.</li>
+            <li>Designed and prototyped Fremandi, a climate-focused adventure game created during Indie Game Clinic's CollabJam 2026.</li>
+            <li>Produced original game art, UI concepts, branding materials, and assets, including logo design and visual identity development.</li>
+          </ul></div>
+        </div>
+
+        <div class="rp-entry" onclick="toggleEntry(this)">
+          <div class="rp-entry-head">
+            <div class="rp-entry-titles">
+              <p class="rp-entry-title">Creative Consulting — Freelance</p>
+              <p class="rp-entry-dates">Mar 2019 – Present · Hybrid</p>
+              <div class="rp-tags">
+                <span class="rp-tag">Story Development</span><span class="rp-tag">Production Planning</span><span class="rp-tag">Narrative Feedback</span><span class="rp-tag">Business Systems</span><span class="rp-tag">Coaching</span>
+              </div>
+            </div>
+            <span class="rp-chevron">▾</span>
+          </div>
+          <div class="rp-entry-body"><ul>
+            <li>Created customizable templates to organize story development, asset tracking, and production planning.</li>
+            <li>Provided narrative and structural feedback for 5+ projects across writing, visual media, and music to improve clarity, pacing, and direction.</li>
+            <li>Brought a tattoo studio into health department compliance within 30 days; enabled expansion to 3 additional locations.</li>
+            <li>Advised 20+ tattoo artists on budgeting, tax preparation, and financial planning for independent work.</li>
+            <li>Coached 5+ independent artists on structuring creative work, addressing creative blocks, and organizing project timelines.</li>
+          </ul></div>
+        </div>
+
+        <div class="rp-entry" onclick="toggleEntry(this)">
+          <div class="rp-entry-head">
+            <div class="rp-entry-titles">
+              <p class="rp-entry-title">Test Publishing Administrator — Pearson</p>
+              <p class="rp-entry-dates">Jul 2024 – Feb 2026 · Remote, Richmond, VA · Promoted from Test Development Technician</p>
+              <div class="rp-tags">
+                <span class="rp-tag">Jira</span><span class="rp-tag">Confluence</span><span class="rp-tag">Smartsheet</span><span class="rp-tag">Scrum</span><span class="rp-tag">Documentation</span><span class="rp-tag">Training</span>
+              </div>
+            </div>
+            <span class="rp-chevron">▾</span>
+          </div>
+          <div class="rp-entry-body"><ul>
+            <li>Introduced Scrum ceremonies and advised teams on breaking down silos, increasing cross-team communication and reducing problem-resolution time.</li>
+            <li>Led consolidation of multiple workflows into Jira across 23 programs — configuring projects, dashboards, and reports to streamline tracking.</li>
+            <li>Revived a department-wide single-source-of-truth initiative; identified Smartsheet DataMesh + Jira Connector as optimal architecture and led cross-team gap analysis, presenting findings to executive leadership.</li>
+            <li>Produced 40+ documentation resources (workflows, SOPs, use cases) in Confluence to support onboarding and knowledge transfer.</li>
+            <li>Designed and delivered training sessions and quick-start guides to accelerate Jira and Confluence adoption.</li>
+          </ul></div>
+        </div>
+
+        <div class="rp-entry" onclick="toggleEntry(this)">
+          <div class="rp-entry-head">
+            <div class="rp-entry-titles">
+              <p class="rp-entry-title">Managing Owner — Speakeasy Tattoo Lounge</p>
+              <p class="rp-entry-dates">Dec 2018 – Dec 2023 · Springdale, AR</p>
+              <div class="rp-tags">
+                <span class="rp-tag">Operations</span><span class="rp-tag">Training Programs</span><span class="rp-tag">Agile Practices</span><span class="rp-tag">Conflict Resolution</span><span class="rp-tag">Marketing</span>
+              </div>
+            </div>
+            <span class="rp-chevron">▾</span>
+          </div>
+          <div class="rp-entry-body"><ul>
+            <li>Navigated complex operational challenges during the pandemic, driving 380% YoY revenue growth through adaptive planning and lean practices.</li>
+            <li>Designed and led an $80K apprenticeship program in partnership with the University of Arkansas Art Department — graduating 16 apprentices with a 94% success rate; 8 now run their own studios.</li>
+            <li>Introduced 30+ structured training, compensation, and policy programs, increasing retention by 60%.</li>
+            <li>Scaled business visibility 149% on social platforms through strategic marketing campaigns and engagement analytics.</li>
+            <li>Fostered a high-performing, psychologically safe workplace using restorative-based ADR and continuous-improvement feedback loops.</li>
+          </ul></div>
+        </div>
+
+        <div class="rp-entry" onclick="toggleEntry(this)">
+          <div class="rp-entry-head">
+            <div class="rp-entry-titles">
+              <p class="rp-entry-title">Director / Photographer — Cydney Bergdorf Photography</p>
+              <p class="rp-entry-dates">Jun 2007 – Dec 2023</p>
+              <div class="rp-tags">
+                <span class="rp-tag">Visual Storytelling</span><span class="rp-tag">Art Direction</span><span class="rp-tag">Client Direction</span><span class="rp-tag">Themed Shoots</span>
+              </div>
+            </div>
+            <span class="rp-chevron">▾</span>
+          </div>
+          <div class="rp-entry-body"><ul>
+            <li>Captured candid, expressive portraiture focused on guiding clients from discomfort into authentic, natural moments.</li>
+            <li>Built themed shoots, curated looks, and designed scenes to match the tone of each visual story.</li>
+            <li>Specialized in first-time subjects — helping people with no modeling experience build confident, authentic portfolios.</li>
+          </ul></div>
+        </div>
+
+        <p class="rp-section-label">Education</p>
+        <div class="rp-edu-grid">
+          <div class="rp-edu">
+            <p class="rp-edu-degree">Creative Writing, BFA</p>
+            <p class="rp-edu-school">Full Sail University · Focus: Game Design · 2026</p>
+          </div>
+          <div class="rp-edu">
+            <p class="rp-edu-degree">Game Studies &amp; Design, BS</p>
+            <p class="rp-edu-school">Old Dominion University · 2027</p>
+          </div>
+          <div class="rp-edu">
+            <p class="rp-edu-degree">Digital Cinematography, AA</p>
+            <p class="rp-edu-school">Full Sail University</p>
+          </div>
+        </div>
+
+        <p class="rp-section-label">Certifications &amp; Languages</p>
+        <div class="rp-tags" style="margin-bottom:1.5rem;">
+          <span class="rp-tag">CAPM</span><span class="rp-tag">Certified ScrumMaster (CSM)</span><span class="rp-tag">English (Native)</span><span class="rp-tag">Spanish (Limited Working)</span><span class="rp-tag">Japanese (Elementary)</span>
+        </div>
+
+        <button class="rp-close" onclick="toggleResume()">Put away résumé ↑</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ CONTACT ══════ -->
+<section id="contact">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's work together</h2>
+    <p>Open to hiring, contract, and collaboration inquiries. Reach out and let's chat.</p>
+    <a href="mailto:cydneybergdorf@gmail.com" class="btn-chart">Send me an email</a>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <span class="footer-name">C Monroe</span>
+  <div class="footer-links">
+    <a href="https://444fern444.itch.io/" target="_blank">Turtle Goat Games</a>
+    <a href="https://shiyaapp.netlify.app" target="_blank">Shiya</a>
+    <a href="https://www.linkedin.com/in/cydneymonroe" target="_blank">LinkedIn</a>
+  </div>
+  <span class="footer-copy">© 2026 · Turtle Goat Games</span>
+</footer>
+
+
+<!-- ══════ ATS-FRIENDLY RÉSUMÉ (print-only, invisible on screen) ══════ -->
+<div id="atsResume">
+  <h1>Cydney Monroe</h1>
+  <p class="ats-contact">Richmond, VA | cydneybergdorf@gmail.com | linkedin.com/in/cydneymonroe</p>
+
+  <p>Creative Writing BFA graduate and current Game Design student focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
+
+  <h2>Experience</h2>
+
+  <h3>Game Designer, Turtle Goat Games</h3>
+  <p class="ats-dates">May 2026 - Present | Richmond, VA</p>
+  <ul>
+    <li>Built interactive prototypes in Unity, RPG Maker MZ, and GameMaker to test gameplay mechanics, player progression, and user experience.</li>
+    <li>Created Game Design Documents, production roadmaps, and design specifications for four original games: Kaizen Daido (language-learning RPG), Forget-Me-Not Inn (story-driven match-3), Fremandi (climate adventure, CollabJam 2026), and HausKeepr (branching narrative thriller).</li>
+    <li>Produced original game art, UI concepts, and branding, including logo design and visual identity development.</li>
+  </ul>
+
+  <h3>Creative Consultant, Freelance</h3>
+  <p class="ats-dates">March 2019 - Present | Hybrid</p>
+  <ul>
+    <li>Provided narrative and structural feedback for 5+ projects across writing, visual media, and music to improve clarity, pacing, and direction.</li>
+    <li>Created customizable templates to organize story development, asset tracking, and production planning.</li>
+    <li>Brought a tattoo studio into health department compliance within 30 days, enabling expansion to 3 additional locations; coached 20+ artists on business operations.</li>
+  </ul>
+
+  <h3>Test Publishing Administrator, Pearson (promoted from Test Development Technician)</h3>
+  <p class="ats-dates">July 2024 - February 2026 | Remote, Richmond, VA</p>
+  <ul>
+    <li>Led consolidation of multiple workflows into Jira across 23 programs, configuring projects, dashboards, and reports to streamline tracking.</li>
+    <li>Introduced Scrum ceremonies and cross-team communication practices, reducing problem-resolution time and breaking down silos.</li>
+    <li>Produced 40+ documentation resources in Confluence and delivered training to accelerate tool adoption, onboarding, and knowledge transfer.</li>
+  </ul>
+
+  <h3>Managing Owner, Speakeasy Tattoo Lounge</h3>
+  <p class="ats-dates">December 2018 - December 2023 | Springdale, AR</p>
+  <ul>
+    <li>Drove 380% year-over-year revenue growth during the pandemic through adaptive planning and lean business practices.</li>
+    <li>Designed and led an $80K apprenticeship program with the University of Arkansas Art Department, graduating 16 apprentices at a 94% success rate; 8 now run their own studios.</li>
+    <li>Introduced 30+ structured training, compensation, and policy programs, increasing retention by 60%.</li>
+  </ul>
+
+  <h3>Director and Photographer, Cydney Bergdorf Photography</h3>
+  <p class="ats-dates">June 2007 - December 2023</p>
+  <ul>
+    <li>16 years of candid, expressive portraiture; designed themed shoots and art direction, specializing in first-time subjects building confident portfolios.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <p>Narrative Design: Branching Dialogue, Interactive Storytelling, Narrative Systems, Character Tone and Voice. Game Writing: NPC Dialogue, Tutorial Writing, UI Copy, Event Narrative Design. Tools: Unity, RPG Maker MZ, GameMaker, Twine, Jira, Confluence, Smartsheet, Lucidchart, Adobe Creative Suite, SharePoint, Microsoft 365. Methods: Agile, Scrum, Documentation and Flow Mapping, Cross-functional Collaboration, Stakeholder Communication.</p>
+
+  <h2>Education</h2>
+  <p>Creative Writing, BFA - Full Sail University, Focus: Game Design, 2026<br>
+  Game Studies and Design, BS - Old Dominion University, Expected 2027<br>
+  Digital Cinematography, AA - Full Sail University</p>
+
+  <h2>Certifications and Languages</h2>
+  <p>Certified Associate in Project Management (CAPM); Certified ScrumMaster (CSM). English (Native), Spanish (Limited Working), Japanese (Elementary).</p>
+</div>
+
+<script>
+  function toggleResume() {
+    var panel = document.getElementById('resumePanel');
+    var label = document.getElementById('resumeToggleLabel');
+    var isOpen = panel.classList.toggle('open');
+    label.textContent = isOpen ? 'Put away résumé ↑' : 'See my résumé →';
+    if (isOpen) {
+      setTimeout(function() {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150);
+    }
+  }
+  function openResume() {
+    var panel = document.getElementById('resumePanel');
+    if (!panel.classList.contains('open')) toggleResume();
+  }
+  function toggleEntry(entry) {
+    entry.classList.toggle('open');
+  }
+
+  // ── HausKeepr inline player ──
+  // Replace with the live GitHub Pages URL for the HausKeepr Twine repo
+  var HAUSKEEPR_URL = 'https://cydneybergdorf.github.io/hauskeepr-twine/';
+
+  function toggleHausKeepr() {
+    var panel = document.getElementById('hauskeeprPanel');
+    var label = document.getElementById('hauskeeprToggleLabel');
+    var frame = document.getElementById('hauskeeprFrame');
+    var isOpen = panel.classList.toggle('open');
+    label.textContent = isOpen ? 'Close ✕' : 'Play now →';
+    if (isOpen) {
+      if (frame.src === 'about:blank' || !frame.src) {
+        frame.src = HAUSKEEPR_URL;
+      }
+      setTimeout(function() {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150);
+    }
+  }
+  // Prevent link clicks inside entries from toggling
+  document.querySelectorAll('.rp-entry a, .rp-contact a').forEach(function(a) {
+    a.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+</script>
+</body>
+</html>
