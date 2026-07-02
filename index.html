@@ -131,18 +131,18 @@
   #projects { background: var(--navy-deep); padding: clamp(2.5rem, 6vw, 4rem) 0; }
 
   .shiya-card {
-    background: #1C2859; border: 1px solid #0F1D40; border-radius: 14px;
+    background: #1C2859; border: 1px solid rgba(168,178,228,0.2); border-radius: 14px;
     overflow: hidden; display: flex; margin-bottom: 1.5rem;
   }
   .shiya-visual {
-    width: 158px; flex-shrink: 0; background: #E5EDC4;
+    width: 158px; flex-shrink: 0; background: #0F1D40;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 8px; padding: 1.25rem 1rem;
   }
   .shiya-icon { width: 50px; height: 50px; border-radius: 13px; overflow: hidden; background: var(--navy); }
   .shiya-icon img { width: 100%; height: 100%; object-fit: cover; }
-  .shiya-visual-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #333D10; }
-  .shiya-visual-sub { font-size: 10px; color: #6B7442; text-align: center; line-height: 1.4; }
+  .shiya-visual-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #EEF0FA; }
+  .shiya-visual-sub { font-size: 10px; color: var(--peri); text-align: center; line-height: 1.4; }
   .shiya-body { padding: 1.4rem 1.5rem; flex: 1; min-width: 0; }
   .badge-row { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
   .badge {
@@ -150,11 +150,11 @@
     letter-spacing: 0.04em; text-transform: uppercase;
   }
   .badge-chart { background: var(--navy); color: var(--chart); }
-  .badge-warm { background: #DCE6B8; color: #4A5220; }
-  .shiya-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #333D10; margin-bottom: 10px; }
-  .shiya-screenshot { width: 100%; max-width: 320px; border-radius: 10px; margin-bottom: 0.875rem; border: 1px solid #D8E3AC; }
-  .shiya-desc { font-size: 0.825rem; color: #6B7442; line-height: 1.65; margin-bottom: 0.875rem; }
-  .shiya-link { font-size: 0.825rem; font-weight: 700; color: #333D10; text-decoration: underline; text-underline-offset: 3px; }
+  .badge-warm { background: rgba(168,178,228,0.18); color: var(--peri); }
+  .shiya-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #EEF0FA; margin-bottom: 10px; }
+  .shiya-screenshot { width: 100%; max-width: 320px; border-radius: 10px; margin-bottom: 0.875rem; border: 1px solid rgba(168,178,228,0.25); }
+  .shiya-desc { font-size: 0.825rem; color: var(--peri); line-height: 1.65; margin-bottom: 0.875rem; }
+  .shiya-link { font-size: 0.825rem; font-weight: 700; color: var(--chart); text-decoration: underline; text-underline-offset: 3px; }
 
   .tg-banner { width: 100%; border-radius: 14px; margin-bottom: 0.875rem; }
   .tg-header {
@@ -395,7 +395,7 @@
 <!-- ══════ NAV ══════ -->
 <nav>
   <a class="logo" href="#hero">
-    <div class="logo-badge"><img src="images/Turtle_Goat_Logo_.png" alt="Turtle Goat Games logo"></div>
+    <div class="logo-badge"><img src="images/Turtle_Goat_Logo.png" alt="Turtle Goat Games logo"></div>
     <span class="logo-name">C Monroe</span>
   </a>
   <ul class="nav-links">
@@ -466,7 +466,7 @@
     <!-- Turtle Goat Games -->
     <img src="images/Turtle_Goat_Banner.png" alt="Turtle Goat Games banner" class="tg-banner">
     <div class="tg-header">
-      <div class="tg-badge"><img src="images/Turtle_Goat_Logo_.png" alt="Turtle Goat Games logo"></div>
+      <div class="tg-badge"><img src="images/Turtle_Goat_Logo.png" alt="Turtle Goat Games logo"></div>
       <div class="tg-info">
         <p class="tg-name">Turtle Goat Games</p>
         <p class="tg-sub">Indie game studio · Game design, level design &amp; 2D illustration</p>
