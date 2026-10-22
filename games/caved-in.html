@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAVED IN | Cydney Monroe</title><link rel="stylesheet" href="game.css"></head><body><main><div class="standalone"><a href="../index.html#school-projects">← Portfolio</a></div><div id="title-screen" tabindex="0" aria-label="CAVED IN title. Press any key to begin."><pre id="console-title">##############################################################################
+#+--------------------------------------------------------------------------+#
+#|                                                                          |#
+#|            ____     _    __     __ _____  ____      ___  _   _           |#
+#|           / ___|   / \   \ \   / /| ____||  _ \    |_ _|| \ | |          |#
+#|          | |      / _ \   \ \ / / |  _|  | | | |    | | |  \| |          |#
+#|          | |___  / ___ \   \ V /  | |___ | |_| |    | | | |\  |          |#
+#|           \____|/_/   \_\   \_/   |_____||____/    |___||_| \_|          |#
+#|                                                                          |#
+#|                                                                          |#
+#|                        === --- ~ . * . ~ --- ===                         |#
+#|                                                                          |#
+#|                  AN ASCII DUNGEON GAME by CYDNEY MONROE                  |#
+#|                                                                          |#
+#|                  CAN YOU FIND YOUR WAY OUT OF THE CAVE?                  |#
+#|                                                                          |#
+#+--------------------------------------------------------------------------+#
+##############################################################################</pre><p>Press any key to begin...</p></div><div id="play-screen" hidden><div id="game" tabindex="0" aria-label="CAVED IN console. Press H for help."><div class="map-scroll"><pre id="map" aria-label="Room map"></pre></div><div id="hud"><h2 id="room"></h2><p id="description"></p><p id="nearby"></p><p id="status" role="status" aria-live="polite"></p><p id="health"></p></div></div><p class="hint">Press H for help.</p><form id="commandForm" hidden><label for="command">Command:</label><input id="command" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false"></form></div></main><script src="dungeon-data.js"></script><script src="dungeon-engine.js"></script><script src="dungeon-ui.js"></script><script>if(new URLSearchParams(location.search).has('embed')){document.body.classList.add('embedded');const send=()=>parent.postMessage({type:'school-game-height',height:Math.ceil(document.querySelector('main').getBoundingClientRect().height)+2},'*');new ResizeObserver(send).observe(document.querySelector('main'));window.addEventListener('load',send);}</script></body></html>

@@ -388,121 +388,87 @@
     .resume-card { flex-direction: column; text-align: center; }
     footer { flex-direction: column; text-align: center; }
   }
+  .school-projects .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .school-projects .game-thumb pre { font-size: 16px !important; line-height: 1.15 !important; }
+  @media(max-width:600px) { .school-projects .games-grid { grid-template-columns: 1fr; } }
+
+.school-player { scroll-margin-top:80px; margin: 1.5rem 0; border: 1px solid var(--border, #667564); border-radius: 12px; overflow: hidden; background: #111815; }
+.school-player[hidden] { display: none; }
+.school-player-head { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; color:#ecede5; gap:16px; }
+.school-player-head h3 { margin:0; }
+.school-player-head button { cursor:pointer; background:transparent; color:inherit; border:1px solid #718273; border-radius:5px; padding:8px 12px; }
+.school-frame { display:block; width:100%; height:850px; border:0; background:#111815; }
+@media print { .school-player { display:none; } }
+
+.intro-about{padding:60px 0!important}.intro-about h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1.12;margin:0 0 20px}.intro-about .about-text p{max-width:620px;font-size:15px}.work-with{border-top:1px solid #344367;padding-top:18px;margin:22px 0}.work-with h2{font-size:15px;margin:0 0 8px}.work-with p{font-size:13px!important;margin-bottom:6px}.game-thumb{height:155px}.space-run .game-thumb{background:#141b35}.space-run .game-thumb img{object-fit:contain}.game-sub{font-size:13px;line-height:1.6}.game-info{padding:18px}.status-label{font:11px 'Nunito',sans-serif;color:var(--chart);display:block;margin-top:4px}.play-text{display:inline-block;background:none;border:0;color:var(--chart);font:700 13px 'Nunito',sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:0;margin-top:10px}.play-text .game-play-hint{font-size:13px}.project-notes{border-top:1px solid #344367;margin-top:14px}.project-notes summary{cursor:pointer;font-size:13px;padding:10px 0;color:var(--lav)}.project-notes p{font-size:13px;color:var(--peri);line-height:1.7;margin-bottom:10px}.console-thumb{display:flex;align-items:center;justify-content:center;background:#14201b;color:#bbcabd}.console-thumb pre{font:16px/1.5 monospace!important}.placeholder-card{opacity:.7}.placeholder-card .console-thumb{background:#131e37;color:var(--peri)}a:focus-visible,button:focus-visible,summary:focus-visible,[role=button]:focus-visible{outline:3px solid var(--chart);outline-offset:4px}#about,#projects,#resume{scroll-margin-top:80px}@media(max-width:620px){.about-inner{flex-direction:column}.intro-about{padding:36px 0!important}.nav-links{gap:12px}.logo-name{font-size:15px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.studio-link{color:inherit;text-underline-offset:3px}.studio-banner-link{display:block;border-radius:14px}.art-frame{position:relative;height:auto;aspect-ratio:1.5;background:#101931}.fremandi-art img{position:absolute;top:0;left:0;width:100%;height:auto;max-width:none;transform:translateY(-32.2%);object-fit:initial}.inn-art{display:flex;align-items:center;justify-content:center;background:#111}.inn-art img{width:100%;height:100%;object-fit:contain;object-position:center}
+
+/* Consistent card geometry; subjects have individual focal positions. */
+.games-grid{align-items:stretch}.games-grid>.game-card{height:375px;display:flex;flex-direction:column}.games-grid .game-thumb{position:relative;height:200px!important;aspect-ratio:auto;flex:0 0 200px;overflow:hidden}.games-grid .game-info{flex:1;min-height:0;overflow:auto}.games-grid .game-thumb img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}.games-grid .fremandi-art img{position:absolute;top:0;left:0;width:100%;height:auto;transform:translateY(-41%);object-fit:initial}.games-grid .inn-art img{position:absolute;left:-10%;width:120%;height:100%;object-fit:cover;object-position:50% 75%;transform:none}.games-grid .space-run .game-thumb img{object-fit:cover;object-position:50% 48%}.games-grid .top-crop img[src*="HausKeepr"]{object-position:50% 11%}.games-grid .title-thumb{background:#0b0b0b;display:flex;align-items:center}.games-grid .title-thumb img{object-fit:contain}.games-grid .text-console-thumb img{object-fit:cover;object-position:50% 0%}
+
+.games-grid .inn-art img{position:static;left:auto;width:100%;height:100%;object-fit:cover;object-position:center;transform:none}.games-grid .shiya-school .game-thumb img{object-position:50% 0%}
+
+.project-module{border-top:1px solid #344367;margin:20px 0 32px}.project-module.school-projects{margin-top:32px!important}.module-heading{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;cursor:pointer}.module-heading::-webkit-details-marker{display:none}.module-heading h2{font:700 24px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.03em;margin:0}.module-heading::after{content:'+';color:var(--chart);font-size:25px}.project-module[open]>.module-heading::after{content:'−'}.module-content{padding-top:8px}.game-info>.game-sub{margin-top:6px}.project-module .project-notes summary{display:list-item}
 </style>
 </head>
 <body>
 
 <!-- ══════ NAV ══════ -->
 <nav>
-  <a class="logo" href="#hero">
+  <a class="logo" href="#about">
     <div class="logo-badge"><img src="images/Turtle_Goat_Logo_.png" alt="Turtle Goat Games logo"></div>
     <span class="logo-name">C Monroe</span>
   </a>
   <ul class="nav-links">
     <li class="hide-xs"><a href="#about">About</a></li>
-    <li class="hide-xs"><a href="#projects">Projects</a></li>
-    <li><a href="#resume">Résumé</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume" onclick="openResume()">Résumé</a></li>
     <li><a href="#contact" class="cta">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ══════ HERO ══════ -->
-<section id="hero">
-  <div class="container">
-    <p class="eyebrow">Writer · Game Designer · Illustrator</p>
-    <h1>Cydney Monroe</h1>
-    <div class="btn-row">
-      <a href="#projects" class="btn-primary">View my work</a>
-      <a href="#contact" class="btn-outline">Get in touch</a>
-    </div>
-  </div>
-</section>
-
+<section id="about" class="intro-about"><div class="container about-inner">
+<div class="photo-wrap"><img src="images/cydney.avif" alt="Cydney Monroe" width="140" height="175"></div>
+<div class="about-text"><p class="eyebrow">Game Design · Writing · Illustration</p><h1>Cydney Monroe</h1>
+<p>Science fiction writer, game designer, and illustrator who designs interactive stories with a goal of encouraging curiosity, empathy, and reflection.</p>
+<p>Co-founder of <strong><a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a></strong>.</p>
+<div class="work-with"><h2>What I work with</h2><p>Unity · C++ · GameMaker · RPGMaker</p><p>Narrative Design, 2D Illustration, Pre-Production Organization</p><p>Project Management, Operations, Documentation</p></div>
+<a href="#resume" class="text-link" onclick="openResume()">View résumé ↓</a></div></div></section>
 <div class="divider"></div>
-
-<!-- ══════ ABOUT ══════ -->
-<section id="about">
-  <div class="container about-inner">
-    <div class="photo-wrap">
-      <img src="images/cydney.avif" alt="Photo of Cydney Monroe">
-    </div>
-    <div class="about-text">
-      <p class="eyebrow">About me</p>
-      <h2 class="section-heading" style="margin-bottom:1rem;">Hi, I'm Cydney.</h2>
-      <p>Science fiction writer, game designer, and illustrator who builds interactive stories that encourage curiosity, empathy, and reflection.</p>
-      <p>Co-founder of <strong>Turtle Goat Games</strong>. Creator of <strong>Shiya</strong>.</p>
-      <a href="#resume" class="text-link" onclick="openResume()">View résumé ↓</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ══════ PROJECTS ══════ -->
 <section id="projects">
   <div class="container">
     <p class="eyebrow">Projects</p>
-    <h2 class="section-heading">Things I've made</h2>
-
-    <!-- Shiya -->
-    <div class="shiya-card">
-      <div class="shiya-visual">
-        <div class="shiya-icon"><img src="images/shiya_icon.png" alt="Shiya logo"></div>
-        <span class="shiya-visual-name">Shiya</span>
-        <span class="shiya-visual-sub">your intentions, made visible</span>
-      </div>
-      <div class="shiya-body">
-        <div class="badge-row">
-          <span class="badge badge-chart">Published App</span>
-          <span class="badge badge-warm">PWA</span>
-        </div>
-        <img src="images/shiya_screenshot.png" alt="Shiya app screenshot" class="shiya-screenshot">
-        <p class="shiya-desc">A vision board tool for mobile and desktop wallpapers. Add images, affirmations, and tarot cards, then export or save to your home screen.</p>
-        <a href="https://shiyaapp.netlify.app" target="_blank" class="shiya-link">shiyaapp.netlify.app →</a>
-      </div>
-    </div>
+    <details class="project-module" id="games-module" open><summary class="module-heading"><h2>Games</h2></summary><div class="module-content">
 
     <!-- Turtle Goat Games -->
-    <img src="images/Turtle_Goat_Banner.png" alt="Turtle Goat Games banner" class="tg-banner">
+    <a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-banner-link"><img src="images/Turtle_Goat_Banner.png" alt="Turtle Goat Games website" class="tg-banner"></a>
     <div class="tg-header">
-      <div class="tg-badge"><img src="images/Turtle_Goat_Logo_.png" alt="Turtle Goat Games logo"></div>
+      <a class="tg-badge" href="https://turtlegoatstudios.com" target="_blank" rel="noopener"><img src="images/Turtle_Goat_Logo_.png" alt="Turtle Goat Games website"></a>
       <div class="tg-info">
-        <p class="tg-name">Turtle Goat Games</p>
+        <p class="tg-name"><a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a></p>
         <p class="tg-sub">Indie game studio · Game design, level design &amp; 2D illustration</p>
       </div>
       <a href="https://444fern444.itch.io/" target="_blank" class="tg-link">Play our games! →</a>
     </div>
 
-    <div class="games-grid">
-      <a class="game-card game-card-link" href="https://444fern444.itch.io/fremandi" target="_blank">
-        <div class="game-thumb"><img src="images/Cover.jpg" alt="Fremandi cover art"></div>
-        <div class="game-info">
-          <p class="game-title">Fremandi <span class="game-play-hint">Play on itch.io ↗</span></p>
-          <p class="game-sub">2.5D escape · Unity · Climate narrative</p>
-        </div>
-      </a>
-      <div class="game-card">
-        <div class="game-thumb top-crop"><img src="images/fmni.png" alt="Forget-Me-Not Inn cover art"></div>
-        <div class="game-info">
-          <p class="game-title">Forget-Me-Not Inn</p>
-          <p class="game-sub">Match-3 mystery · GameMaker · Story-driven</p>
-        </div>
-      </div>
-      <div class="game-card">
-        <div class="game-thumb"><img src="images/KaizenDaido.png" alt="Kaizen Daido cover art"></div>
-        <div class="game-info">
-          <p class="game-title">Kaizen Daido</p>
-          <p class="game-sub">Cozy RPG · RPG Maker · Language learning</p>
-        </div>
-      </div>
-      <div class="game-card game-card-toggle" id="hauskeeprToggle" onclick="toggleHausKeepr()">
+    <div class="games-grid"><article class="game-card"><div class="game-thumb art-frame fremandi-art"><img src="images/Cover.jpg" alt="Fremandi alien piloting a UFO"></div><div class="game-info"><p class="game-title">Fremandi</p><a class="play-text" href="https://444fern444.itch.io/fremandi" target="_blank" rel="noopener">Play prototype on itch.io →</a><p class="game-sub">Unity · 2.5D · Puzzles</p><details class="project-notes"><summary>About the project</summary><p>Our first prototype, made during <a href="https://itch.io/jam/indie-game-clinic-collab-jam-26" target="_blank" rel="noopener">Indie Game Clinic COLLAB JAM ’26</a>.</p><p>The theme: self-explanatory. No written or spoken words, no instructions.</p><p>Collect gears to help Turtle Goat repair their ship and escape.</p></details></div></article><article class="game-card"><div class="game-thumb art-frame inn-art"><img src="images/forget-me-not-inn.png" alt="Forget-Me-Not Inn: Rae asks Where am I?" loading="lazy"></div><div class="game-info"><p class="game-title">Forget-Me-Not-Inn</p><p class="game-sub">GameMaker · Match-3 · Mystery · Story-Driven</p><details class="project-notes"><summary>About the project</summary><p>Rae awakens in a ruined inn with no memory of her past, guided only by notes she does not remember writing and a cryptic wizard who gives her more questions than answers.</p><p>As the inn is restored and adventurers grow stronger, Rae begins to uncover the truth behind her forgotten sacrifice.</p></details></div></article><article class="game-card"><div class="game-thumb"><img src="images/KaizenDaido.png" alt="Kaizen Daido cover art"></div><div class="game-info"><p class="game-title">Kaizen Daido</p><p class="game-sub">RPG Maker · Language Learning · RPG · Puzzles</p><details class="project-notes"><summary>About the project</summary><p>Just another modern take on Stardew Valley but with more robots, AI, and passive language learning.</p></details></div></article><article class="game-card space-run"><div class="game-thumb"><img src="images/space-run.png" alt="Space Run concept art: a floating cat surrounded by rainbow rings and stars" loading="lazy"></div><div class="game-info"><p class="game-title">Space Run <span class=status-label>In progress</span></p><p class="game-sub">Unity · Mobile Game · Roguelite</p><details class="project-notes"><summary>About the project</summary><p>A roguelite space adventure with passive physics learning.</p><p>Destroy objects in space to increase mass and orbital defenses.</p></details></div></article></div>
+
+</div></details>
+
+<details class="project-module school-projects" id="school-projects" open><summary class="module-heading"><h2>School Projects</h2></summary><div class="module-content"><div class="games-grid"><article class="game-card"><div class="game-thumb title-thumb"><img src="images/caved-in-console.png" alt="CAVED IN original console title screen"></div><div class="game-info"><p class="game-title">CAVED IN</p><p class="game-sub">George Mason University · GAME140 · C++</p><a class="play-text school-game" href="games/caved-in.html" data-game="caved-in" aria-expanded="false" aria-controls="caved-in-panel"><span class="game-play-hint">Play in browser →</span></a><details class="project-notes"><summary>About the project</summary><p>A GAME140 assignment focused on character input, tile-based movement, and game state. I used VMware Fusion and wrote C++ in Visual Studio with assistance from an AI coach designed for the course.</p></details></div></article><article class="game-card"><div class="game-thumb text-console-thumb"><img src="images/fremandi-console.png" alt="Fremandi original text adventure console introduction"></div><div class="game-info"><p class="game-title">Fremandi: Text Adventure</p><p class="game-sub">George Mason University · GAME140 · C++</p><a class="play-text school-game" href="games/fremandi-text.html" data-game="fremandi-text" aria-expanded="false" aria-controls="fremandi-text-panel"><span class="game-play-hint">Play in browser →</span></a><details class="project-notes"><summary>About the project</summary><p>A GAME140 assignment focused on command parsing, connected locations, and inventory. I used VMware Fusion and wrote C++ in Visual Studio with assistance from an AI coach designed for the course.</p></details></div></article><article class="game-card shiya-school"><div class="game-thumb"><img src="images/shiya_screenshot.png" alt="Shiya vision board app" loading="lazy"></div><div class="game-info"><p class="game-title">Shiya</p><p class="game-sub">Old Dominion University · ENG/IDS307T Digital Writing</p><a class="play-text" href="https://shiyaapp.netlify.app" target="_blank" rel="noopener">Open app ↗</a><details class="project-notes"><summary>About the project</summary><p>A vision board app developed with Claude for an assignment on prompting, visual design, and communicating with AI.</p></details></div></article><article class="game-card">
         <div class="game-thumb top-crop"><img src="images/HausKeepr_Final_Flyer.png" alt="HausKeepr cover art"></div>
         <div class="game-info">
-          <p class="game-title">HausKeepr <span class="game-play-hint" id="hauskeeprToggleLabel">Play now →</span></p>
-          <p class="game-sub">Branching thriller · Twine · AI ethics</p>
+          <p class="game-title">HausKeepr</p>
+          <p class="game-sub">Full Sail University · Creative Writing BFA · Twine</p><button type="button" class="play-text" id="hauskeeprToggleLabel" onclick="toggleHausKeepr()" aria-expanded="false" aria-controls="hauskeeprPanel">Play in browser →</button>
+<details class="project-notes"><summary>About the project</summary><p>Created for <a href="https://hub.fullsail.edu/articles/writing-immersive-game-narratives-in-full-sails-creative-writing-program" target="_blank" rel="noopener">Writing Workshop IV: Video Games and Interactive Formats</a>. The assignment focused on writing a playable narrative with choices and cause-and-effect mechanics.</p></details>
         </div>
-      </div>
-    </div>
+      </article><article class="game-card placeholder-card"><div class="game-thumb console-thumb"><pre aria-hidden="true">SDL3
+// coming soon</pre></div><div class="game-info"><p class="game-title">SDL3 Project 1</p><p class="game-sub">Coming soon · C++ / SDL3</p></div></article><article class="game-card placeholder-card"><div class="game-thumb console-thumb"><pre aria-hidden="true">SDL3
+// coming soon</pre></div><div class="game-info"><p class="game-title">SDL3 Project 2</p><p class="game-sub">Coming soon · C++ / SDL3</p></div></article></div>
+<section class="school-player" id="caved-in-panel" hidden aria-label="CAVED IN player"><div class="school-player-head"><h3>CAVED IN</h3><button type="button" data-close="caved-in">Close ✕</button></div><iframe title="CAVED IN console game" data-src="games/caved-in.html?embed=1" id="caved-in-frame" class="school-frame"></iframe></section>
+<section class="school-player" id="fremandi-text-panel" hidden aria-label="Fremandi: Text Adventure player"><div class="school-player-head"><h3>Fremandi: Text Adventure</h3><button type="button" data-close="fremandi-text">Close ✕</button></div><iframe title="Fremandi: Text Adventure console game" data-src="games/fremandi-text.html?embed=1" id="fremandi-text-frame" class="school-frame"></iframe></section>
 
     <!-- ══════ INLINE HAUSKEEPR PLAYER (hidden until expanded) ══════ -->
     <div id="hauskeeprPanel" class="hk-panel">
@@ -518,7 +484,9 @@
       </div>
     </div>
 
-    <div class="resume-card" id="resume" onclick="toggleResume()">
+</div></details>
+
+    <div class="resume-card" id="resume" role="button" tabindex="0" aria-expanded="false" aria-controls="resumePanel" onclick="toggleResume()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleResume();}">
       <div class="resume-icon">📄</div>
       <div class="resume-info">
         <p class="resume-title">Résumé</p>
@@ -539,7 +507,7 @@
           <button class="rp-print" onclick="window.print()">Print / Save PDF</button>
         </div>
 
-        <p class="rp-summary">Creative Writing BFA graduate and current Game Design student focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
+        <p class="rp-summary">Creative Writing BFA graduate and current Computer Game Design student at George Mason University focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
 
         <div class="rp-contact">
           <a href="mailto:hello@cydneymonroe.com">hello@cydneymonroe.com</a>
@@ -551,10 +519,10 @@
 
         <p class="rp-section-label">Experience</p>
 
-        <div class="rp-entry" onclick="toggleEntry(this)">
+        <div class="rp-entry" role="button" tabindex="0" aria-expanded="false" onclick="toggleEntry(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleEntry(this);}">
           <div class="rp-entry-head">
             <div class="rp-entry-titles">
-              <p class="rp-entry-title">Game Designer — Turtle Goat Games</p>
+              <p class="rp-entry-title">Game Designer — <a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a></p>
               <p class="rp-entry-dates">May 2026 – Present · Richmond, VA</p>
               <div class="rp-tags">
                 <span class="rp-tag">Unity</span><span class="rp-tag">RPG Maker MZ</span><span class="rp-tag">GameMaker</span><span class="rp-tag">GDDs</span><span class="rp-tag">Narrative Design</span><span class="rp-tag">Worldbuilding</span><span class="rp-tag">2D Art &amp; Branding</span>
@@ -572,7 +540,7 @@
           </ul></div>
         </div>
 
-        <div class="rp-entry" onclick="toggleEntry(this)">
+        <div class="rp-entry" role="button" tabindex="0" aria-expanded="false" onclick="toggleEntry(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleEntry(this);}">
           <div class="rp-entry-head">
             <div class="rp-entry-titles">
               <p class="rp-entry-title">Creative Consulting — Freelance</p>
@@ -592,7 +560,7 @@
           </ul></div>
         </div>
 
-        <div class="rp-entry" onclick="toggleEntry(this)">
+        <div class="rp-entry" role="button" tabindex="0" aria-expanded="false" onclick="toggleEntry(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleEntry(this);}">
           <div class="rp-entry-head">
             <div class="rp-entry-titles">
               <p class="rp-entry-title">Test Publishing Administrator — Pearson</p>
@@ -612,7 +580,7 @@
           </ul></div>
         </div>
 
-        <div class="rp-entry" onclick="toggleEntry(this)">
+        <div class="rp-entry" role="button" tabindex="0" aria-expanded="false" onclick="toggleEntry(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleEntry(this);}">
           <div class="rp-entry-head">
             <div class="rp-entry-titles">
               <p class="rp-entry-title">Managing Owner — Speakeasy Tattoo Lounge</p>
@@ -632,7 +600,7 @@
           </ul></div>
         </div>
 
-        <div class="rp-entry" onclick="toggleEntry(this)">
+        <div class="rp-entry" role="button" tabindex="0" aria-expanded="false" onclick="toggleEntry(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleEntry(this);}">
           <div class="rp-entry-head">
             <div class="rp-entry-titles">
               <p class="rp-entry-title">Director / Photographer — Cydney Bergdorf Photography</p>
@@ -657,8 +625,8 @@
             <p class="rp-edu-school">Full Sail University · Focus: Game Design · 2026</p>
           </div>
           <div class="rp-edu">
-            <p class="rp-edu-degree">Game Studies &amp; Design, BS</p>
-            <p class="rp-edu-school">Old Dominion University · 2027</p>
+            <p class="rp-edu-degree">Computer Game Design, BFA</p>
+            <p class="rp-edu-school">George Mason University · 2026–2030</p>
           </div>
           <div class="rp-edu">
             <p class="rp-edu-degree">Digital Cinematography, AA</p>
@@ -693,11 +661,11 @@
 <footer>
   <span class="footer-name">C Monroe</span>
   <div class="footer-links">
-    <a href="https://444fern444.itch.io/" target="_blank">Turtle Goat Games</a>
+    <a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a>
     <a href="https://shiyaapp.netlify.app" target="_blank">Shiya</a>
     <a href="https://www.linkedin.com/in/cydneymonroe" target="_blank">LinkedIn</a>
   </div>
-  <span class="footer-copy">© 2026 · Turtle Goat Games</span>
+  <span class="footer-copy">© 2026 · <a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a></span>
 </footer>
 
 
@@ -706,11 +674,11 @@
   <h1>Cydney Monroe</h1>
   <p class="ats-contact">Richmond, VA | hello@cydneymonroe.com | linkedin.com/in/cydneymonroe</p>
 
-  <p>Creative Writing BFA graduate and current Game Design student focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
+  <p>Creative Writing BFA graduate and current Computer Game Design student at George Mason University focused on interactive storytelling, player-driven progression, and UX-aligned writing. Combines creative writing with systems thinking to support both player experience and development workflows.</p>
 
   <h2>Experience</h2>
 
-  <h3>Game Designer, Turtle Goat Games</h3>
+  <h3>Game Designer, <a href="https://turtlegoatstudios.com" target="_blank" rel="noopener" class="studio-link">Turtle Goat Games</a></h3>
   <p class="ats-dates">May 2026 - Present | Richmond, VA</p>
   <ul>
     <li>Built interactive prototypes in Unity, RPG Maker MZ, and GameMaker to test gameplay mechanics, player progression, and user experience.</li>
@@ -753,7 +721,7 @@
 
   <h2>Education</h2>
   <p>Creative Writing, BFA - Full Sail University, Focus: Game Design, 2026<br>
-  Game Studies and Design, BS - Old Dominion University, Expected 2027<br>
+  Computer Game Design, BFA - George Mason University, 2026–2030<br>
   Digital Cinematography, AA - Full Sail University</p>
 
   <h2>Certifications and Languages</h2>
@@ -765,6 +733,7 @@
     var panel = document.getElementById('resumePanel');
     var label = document.getElementById('resumeToggleLabel');
     var isOpen = panel.classList.toggle('open');
+    document.getElementById('resume').setAttribute('aria-expanded',String(isOpen));
     label.textContent = isOpen ? 'Put away résumé ↑' : 'See my résumé →';
     if (isOpen) {
       setTimeout(function() {
@@ -777,7 +746,7 @@
     if (!panel.classList.contains('open')) toggleResume();
   }
   function toggleEntry(entry) {
-    entry.classList.toggle('open');
+    entry.classList.toggle('open'); entry.setAttribute('aria-expanded',String(entry.classList.contains('open')));
   }
 
   // ── HausKeepr inline player ──
@@ -789,7 +758,7 @@
     var label = document.getElementById('hauskeeprToggleLabel');
     var frame = document.getElementById('hauskeeprFrame');
     var isOpen = panel.classList.toggle('open');
-    label.textContent = isOpen ? 'Close ✕' : 'Play now →';
+    label.textContent = isOpen ? 'Close ✕' : 'Play in browser →'; label.setAttribute('aria-expanded',String(isOpen));
     if (isOpen) {
       if (frame.src === 'about:blank' || !frame.src) {
         frame.src = HAUSKEEPR_URL;
@@ -802,6 +771,25 @@
   // Prevent link clicks inside entries from toggling
   document.querySelectorAll('.rp-entry a, .rp-contact a').forEach(function(a) {
     a.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+
+  document.querySelectorAll('.school-game').forEach(function(card) {
+    card.addEventListener('click', function(event) {
+      if(event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      var slug=card.dataset.game, panel=document.getElementById(slug+'-panel'), frame=document.getElementById(slug+'-frame');
+      var opening=panel.hidden; panel.hidden=!opening; card.setAttribute('aria-expanded',String(opening));
+      card.querySelector('.game-play-hint').textContent=opening?'Close game ↑':'Play in browser →';
+      if(opening) { if(!frame.getAttribute('src')) frame.src=frame.dataset.src; panel.scrollIntoView({behavior:'smooth',block:'start'}); frame.focus(); }
+    });
+  });
+  document.querySelectorAll('[data-close]').forEach(function(button) { button.addEventListener('click',function() {
+    var slug=button.dataset.close; document.getElementById(slug+'-panel').hidden=true;
+    var card=document.querySelector('[data-game="'+slug+'"]'); card.setAttribute('aria-expanded','false'); card.querySelector('.game-play-hint').textContent='Play in browser →'; card.focus({preventScroll:true});
+  }); });
+  window.addEventListener('message',function(event) {
+    if(!event.data || event.data.type!=='school-game-height' || !Number.isFinite(event.data.height)) return;
+    document.querySelectorAll('.school-frame').forEach(function(frame) { if(event.source===frame.contentWindow) frame.style.height=Math.min(1600,Math.max(300,event.data.height))+'px'; });
   });
 </script>
 </body>
